@@ -64,16 +64,16 @@ define("APPURL", "http://localhost/restoran");
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                <div class="navbar-nav ms-auto py-0 pe-4">
-                  <a href="index.html" class="nav-item nav-link active">Home</a>
+                  <a href="<?php echo APPURL; ?>" class="nav-item nav-link active">Home</a>
                   <a href="about.html" class="nav-item nav-link">About</a>
                   <a href="service.html" class="nav-item nav-link">Service</a>
-                  <a href="menu.html" class="nav-item nav-link">Menu</a>
+                  <a href="<?php echo APPURL; ?>/menu.php" class="nav-item nav-link">Menu</a>
                   <?php if (isset($_SESSION['username'])) : ?>
-                     <a href="cart.html" class="nav-item nav-link">Cart</a>
+                     <a href="<?php echo APPURL; ?>/cart.php" class="nav-item nav-link">Cart</a>
 
                   <?php else : ?>
-                     <a href="auth/login.php" class="nav-item nav-link">Login</a>
-                     <a href="auth/register.php" class="nav-item nav-link">Register</a>
+                     <a href="<?php echo APPURL; ?>/auth/login.php" class="nav-item nav-link">Login</a>
+                     <a href="<?php echo APPURL; ?>/auth/register.php" class="nav-item nav-link">Register</a>
                   <?php endif; ?>
                   <div class="nav-item dropdown">
                      <?php if (isset($_SESSION['username'])) : ?>
@@ -81,7 +81,7 @@ define("APPURL", "http://localhost/restoran");
                            <?php echo $_SESSION['username']; ?>
                         </a>
                         <div class="dropdown-menu m-0">
-                           <a href="booking.html" class="dropdown-item">Booking</a>
+                           <a href="<?php echo APPURL; ?>/booking.html" class="dropdown-item">Booking</a>
                            <a href="team.html" class="dropdown-item">Our Team</a>
                            <a class="dropdown-item" href="<?php echo APPURL; ?>/auth/logout.php">Logout</a>
                         </div>

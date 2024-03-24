@@ -59,6 +59,16 @@ class App
       }
    }
 
+
+   public function validateCart($q)
+   {
+      $row = $this->link->query($q);
+      $row->execute();
+      $count = $row->rowCount();
+      return $count;
+
+   }
+
    public function insert($query, $arr, $path)
    {
       if ($this->validate($arr)) {
@@ -66,7 +76,8 @@ class App
       } else {
          $insert_record = $this->link->prepare($query);
          $insert_record->execute($arr);
-         header("location:" . $path);
+         echo "<script> window.location.href = '" . $path . "'</script>";
+
       }
    }
 
@@ -106,7 +117,7 @@ class App
       session_start();
    }
 
-   public function validateSession($path)
+   public function validateSession()
    {
       if (!isset($_SESSION['user_id'])) {
          echo "<script> window.location.href = '" .APPURL. "'</script>";
@@ -124,11 +135,11 @@ class App
       }
    }
 
-   public function delete($query, $path)
+   public function delete($query, $params, $path)
    {
-      $delete_record = $this->link->prepare($query);
-      $delete_record->execute();
-      header("location:" . $path);
+      $stmt = $this->link->prepare($query);
+      $stmt->execute($params);
+      echo "<script> window.location.href = '" . $path . "'</script>";
    }
 }
 

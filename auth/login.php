@@ -5,6 +5,8 @@
 <?php
 
 $app = new App;
+// $app->validateSession();
+
 
 if (isset($_POST['submit'])) {
    $email = $_POST['email'];
@@ -66,7 +68,6 @@ if (isset($_POST['submit'])) {
          </form>
       </div>
    </div>
-</div>
 </div>
 
 <?php require 'includes/footer.php'; ?>
