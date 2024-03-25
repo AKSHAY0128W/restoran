@@ -64,7 +64,6 @@ if (isset($_POST['submit'])) {
       </p>
       <form action="cart.php" method="post" class="d-flex justify-content-between gap-3">
          <button type="submit" name="submit" class="btn btn-primary">Checkout</button>
-         <a href="<?php APPURL; ?>bill.php" class="btn btn-primary">Bill</a>
       </form>
    </div>
 

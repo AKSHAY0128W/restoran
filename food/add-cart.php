@@ -75,8 +75,8 @@ if (isset($_GET['id'])) {
             <p class="mb-4"></p>
             <div class="row g-4 mb-4">
                <div class="col-sm-6">
-                  <div class="d-flex align-items-center border ">
-                     <h3>Price ₹
+                  <div class="d-flex align-items-center mb-4">
+                     <h3 class="border-start border-3 border-warning px-3">Price ₹
                         <?php echo $one->price; ?>
                      </h3>
                   </div>
