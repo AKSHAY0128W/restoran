@@ -12,7 +12,7 @@ define("APPURL", "http://localhost/restoran");
 
 <head>
    <meta charset="utf-8">
-   <title>Restoran - Bootstrap Restaurant Template</title>
+   <title>Restoran - Smart Restaurant</title>
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
    <meta content="" name="keywords">
    <meta content="" name="description">
@@ -64,9 +64,9 @@ define("APPURL", "http://localhost/restoran");
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                <div class="navbar-nav ms-auto py-0 pe-4">
-                  <a href="<?php echo APPURL; ?>" class="nav-item nav-link active">Home</a>
-                  <a href="about.html" class="nav-item nav-link">About</a>
-                  <a href="service.html" class="nav-item nav-link">Service</a>
+                  <a href="<?php echo APPURL; ?>" class="nav-item nav-link">Home</a>
+                  <a href="<?php echo APPURL; ?>/about.php" class="nav-item nav-link">About</a>
+                  <a href="<?php echo APPURL; ?>/service.php" class="nav-item nav-link">Service</a>
                   <a href="<?php echo APPURL; ?>/menu.php" class="nav-item nav-link">Menu</a>
                   <?php if (isset($_SESSION['username'])) : ?>
                      <a href="<?php echo APPURL; ?>/cart.php" class="nav-item nav-link">Cart</a>
@@ -81,8 +81,8 @@ define("APPURL", "http://localhost/restoran");
                            <?php echo $_SESSION['username']; ?>
                         </a>
                         <div class="dropdown-menu m-0">
-                           <a href="<?php echo APPURL; ?>/booking.html" class="dropdown-item">Booking</a>
-                           <a href="team.html" class="dropdown-item">Our Team</a>
+                           <a href="<?php echo APPURL; ?>/users/my_bookings.php" class="dropdown-item">My Booking</a>
+                           <a href="<?php echo APPURL; ?>/users/my_orders.php" class="dropdown-item">My Orders</a>
                            <a class="dropdown-item" href="<?php echo APPURL; ?>/auth/logout.php">Logout</a>
                         </div>
                      <?php endif; ?>

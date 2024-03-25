@@ -1,5 +1,5 @@
 <?php require "config/config.php"; ?>
-<?php 
+<?php
 class App
 {
 
@@ -100,13 +100,12 @@ class App
       $fetch = $login_user->fetch(PDO::FETCH_ASSOC);
       if ($login_user->rowCount() > 0) {
           if (password_verify($data['password'], $fetch['password'])) {
-
              $_SESSION['email'] = $fetch['email'];
              $_SESSION['username'] = $fetch['username'];
             $_SESSION['user_id'] = $fetch['id'];
-
-
-            header("location:" .APPURL."");
+            
+            header("location:" .$path."");
+            
 
          }
       }
@@ -123,6 +122,14 @@ class App
          echo "<script> window.location.href = '" .APPURL. "'</script>";
       }
    }
+   
+   // public function validateSessionAdmin()
+   // {
+   //    if (!isset($_SESSION['email'])) {
+   //       echo "<script> window.location.href = '" .ADMINURL. "/admins/login-admins.php'</script>";
+   //    }
+   // }
+   
 
    public function update($query, $arr, $path)
    {

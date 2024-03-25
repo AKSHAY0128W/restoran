@@ -87,11 +87,14 @@ if (isset($_GET['id'])) {
                <input type="hidden" name="name" value="<?php echo $one->name; ?>">
                <input type="hidden" name="image" value="<?php echo $one->image; ?>">
                <input type="hidden" name="price" value="<?php echo $one->price; ?>">
-               <?php if ($count > 0) : ?>
-                  <button name="submit" type="submit" href="" disabled class="btn btn-primary">Added to cart </button>
-               <?php else : ?>
-                  <button name="submit" type="submit" href="" class="btn btn-primary">Add to cart </button>
+               <?php if (isset($_SESSION['user_id'])) : ?>
+                  <?php if ($count > 0) : ?>
+                     <button name="submit" type="submit" href="" disabled class="btn btn-primary">Added to cart </button>
+                  <?php else : ?>
+                     <button name="submit" type="submit" href="" class="btn btn-primary">Add to cart </button>
+                  <?php endif; ?>
                <?php endif; ?>
+
             </form>
          </div>
       </div>

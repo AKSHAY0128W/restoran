@@ -1,7 +1,6 @@
 <?php require "../config/config.php"; ?>
 <?php require "../App.php"; ?>
 <?php require "../includes/header.php"; ?>
-
 <?php
 
 $app = new App;
@@ -70,4 +69,4 @@ if (isset($_POST['submit'])) {
    </div>
 </div>
 
-<?php require 'includes/footer.php'; ?>
+<?php require '../includes/footer.php'; ?>
